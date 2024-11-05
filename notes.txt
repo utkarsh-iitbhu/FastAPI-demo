@@ -1,0 +1,1 @@
+Run command: uvicorn main:app --reload # main is the name of the file and app is the FastAPI object
