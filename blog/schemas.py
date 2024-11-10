@@ -1,5 +1,5 @@
 from pydantic import BaseModel 
-from typing import List
+from typing import List, Optional
 
 class Blog(BaseModel):
 	title: str
@@ -29,3 +29,14 @@ class ShowBlog(BaseModel): # We can use BaseModel and fetch only the feilds that
 	class Config(): # This is from doc of pydantic we need to add this sub-class
 		orm_mode = True # Which allows the db to show as it uses sqlalchemy.orm mode 
 
+class Login(BaseModel):
+	username: str 
+	password: str
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    email: Optional[str] = None
